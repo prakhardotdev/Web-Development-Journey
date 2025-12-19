@@ -1,0 +1,133 @@
+
+        /* 1. CSS VARIABLES (Custom Properties) */
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #a855f7;
+            --bg-dark: #0f172a;
+            --text-light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* 2. MODERN RESET & GLOBAL STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        /* 3. FLEXBOX NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(10px); /* Glassmorphism */
+            border-radius: 15px;
+            position: sticky;
+            top: 10px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 8px var(--primary-color);
+        }
+
+        /* 4. CSS GRID LAYOUT */
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        section {
+            background: var(--glass);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        /* 5. HOVER EFFECTS & TRANSFORMATIONS */
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: var(--secondary-color);
+        }
+
+        /* 6. ADVANCED TEXT STYLING (Gradients) */
+        h1, h2 {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* 7. BUTTON ANIMATIONS */
+        button {
+            padding: 10px 25px;
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            background: var(--secondary-color);
+            letter-spacing: 1px;
+        }
+
+        /* 8. FORM ELEMENT STYLING */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid #444;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        /* 9. PSEUDO-CLASSES (The Zebra Stripe Table) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th { background: var(--primary-color); padding: 10px; }
+        
+        td { padding: 10px; border-bottom: 1px solid #333; }
+
+        tr:nth-child(even) { background: rgba(255,255,255,0.05); }
+
+        /* 10. RESPONSIVE DESIGN (Media Queries) */
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            nav { flex-direction: column; }
+            nav a { margin: 10px 0; }
+        }
+    
